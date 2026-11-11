@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ronan Miles Help</title><meta name="description" content="Ronan Miles Help — ronanmiles.help">
+<link rel="stylesheet" href="styles.css"><style>:root{--accent:#2f7a4b;--bg:#f6faf7}</style></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><a class="brand" href="/">Ronan Miles Help</a><nav aria-label="Sections"><a href="#help">What I can help with</a><a href="#how">How to ask</a><a href="#contact">Contact</a></nav></header>
+<main id="main"><div class="hero"><p class="eyebrow">Support door</p><h1>Ronan Miles Help</h1><p class="lede">Practical help and guidance for technical problems, systems, and workflows.</p></div>
+<section id="help" aria-labelledby="help-h"><h2 id="help-h">What I can help with</h2><div class="grid"><div class="card"><h3>Troubleshooting</h3><p>Diagnosing problems with computers, accounts, and networks.</p></div><div class="card"><h3>Guidance</h3><p>Plain-language explanations and next steps.</p></div><div class="card"><h3>Workflows</h3><p>Setting up tools and processes that are easier to maintain.</p></div></div></section><section id="how" aria-labelledby="how-h"><h2 id="how-h">How to ask</h2><p>Describe the problem, what you expected, and what you have tried. <span class="todo">[Request process and availability to be defined]</span></p></section><section id="contact" aria-labelledby="contact-h"><h2 id="contact-h">Contact</h2><p>Email: <a href="mailto:help@ronanmiles.help">help@ronanmiles.help</a> <span class="todo">[confirm this mailbox is active]</span></p><p>Technical writing and projects: <a href="https://ronanmiles.tech">ronanmiles.tech</a></p></section></main>
+<footer><p>&copy; 2026 Ronan Miles Help · ronanmiles.help</p></footer></body></html>

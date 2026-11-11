@@ -1,9 +1,756 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ronan Miles Help</title><meta name="description" content="Ronan Miles Help — ronanmiles.help">
-<link rel="stylesheet" href="styles.css"><style>:root{--accent:#2f7a4b;--bg:#f6faf7}</style></head>
-<body><a class="skip" href="#main">Skip to content</a>
-<header><a class="brand" href="/">Ronan Miles Help</a><nav aria-label="Sections"><a href="#help">What I can help with</a><a href="#how">How to ask</a><a href="#contact">Contact</a></nav></header>
-<main id="main"><div class="hero"><p class="eyebrow">Support door</p><h1>Ronan Miles Help</h1><p class="lede">Practical help and guidance for technical problems, systems, and workflows.</p></div>
-<section id="help" aria-labelledby="help-h"><h2 id="help-h">What I can help with</h2><div class="grid"><div class="card"><h3>Troubleshooting</h3><p>Diagnosing problems with computers, accounts, and networks.</p></div><div class="card"><h3>Guidance</h3><p>Plain-language explanations and next steps.</p></div><div class="card"><h3>Workflows</h3><p>Setting up tools and processes that are easier to maintain.</p></div></div></section><section id="how" aria-labelledby="how-h"><h2 id="how-h">How to ask</h2><p>Describe the problem, what you expected, and what you have tried. <span class="todo">[Request process and availability to be defined]</span></p></section><section id="contact" aria-labelledby="contact-h"><h2 id="contact-h">Contact</h2><p>Email: <a href="mailto:help@ronanmiles.help">help@ronanmiles.help</a> <span class="todo">[confirm this mailbox is active]</span></p><p>Technical writing and projects: <a href="https://ronanmiles.tech">ronanmiles.tech</a></p></section></main>
-<footer><p>&copy; 2026 Ronan Miles Help · ronanmiles.help</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronan Miles Help — Practical Tech Guidance &amp; Workshops</title>
+  <meta name="description" content="Plain-English technical workshops and 1-on-1 guidance for small businesses, professionals, and teams in Salinas, Monterey, and the Central Coast." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-alt: #162032;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #7dd3fc;
+      --border: #334155;
+      --max-w: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: fixed;
+      top: -80px;
+      left: 16px;
+      z-index: 100;
+      background: var(--surface);
+      color: var(--text);
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .skip:focus {
+      top: 10px;
+    }
+
+    .draft-bar {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .draft-bar span {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .brand:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      max-width: 22ch;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #0f172a;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 64ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-actions {
+      margin-top: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .card ul li {
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.45rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .info-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-box p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .form-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 680px;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+    }
+
+    select,
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 6.5rem;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .privacy-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 3rem 0 2.5rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      h2 {
+        font-size: 1.55rem;
+      }
+
+      nav {
+        gap: 0.75rem 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      .form-wrap {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="draft-bar">Offline preview <span>·</span> not published <span>·</span> ronanmiles.help mockup</div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="/" class="brand">Ronan Miles <span>Help</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#help">Get Help</a>
+        <a href="#workshops">Workshops</a>
+        <a href="#format">How It Works</a>
+        <a href="#request">Contact</a>
+        <a href="https://ronanmiles.tech" target="_blank" rel="noopener">Systems &amp; IT Consulting ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Practical Guidance · Plain-English Training</span>
+        <h1>Help and Workshops That Actually Make Sense.</h1>
+        <p>
+          One-on-one guidance and small-group clinics for Central Coast professionals,
+          small business owners, and everyday users in Salinas, Monterey, and nearby.
+          Learn practical security, smart workflows, and real-world tools without the industry jargon.
+        </p>
+        <div class="btn-group">
+          <a href="#help" class="btn btn-primary">Get Help ↓</a>
+          <a href="#request" class="btn btn-secondary">Join Workshop Waitlist ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="help">
+      <div class="container">
+        <div class="section-label">01 / One-on-One Guidance</div>
+        <h2>Get Help</h2>
+        <p class="section-intro">
+          Have a specific question about your setup, a stuck computer, or a tool you want to use
+          more confidently? Send a short enquiry in plain language. This is the original purpose
+          of ronanmiles.help, and it remains the front door for individual questions.
+        </p>
+
+        <div class="two-col">
+          <div class="info-box">
+            <h3>Send a short enquiry</h3>
+            <p>
+              Describe the question in your own words. The form opens a draft in your mail app
+              addressed to Ronan Miles Help. Nothing is stored on a server, and nothing is sent
+              until you press Send.
+            </p>
+          </div>
+          <div class="info-box">
+            <h3>Ticketing comes later</h3>
+            <p>
+              A help desk with status tracking is planned, but it is not available yet. Until then,
+              email is the way in. Please do not include passwords, recovery codes, or other
+              sensitive details.
+            </p>
+          </div>
+        </div>
+
+        <div class="btn-group section-actions">
+          <a href="#request" class="btn btn-primary" data-topic="Get Help: one-on-one question">Send a question ↓</a>
+          <a href="https://ronanmiles.tech" class="btn btn-secondary" target="_blank" rel="noopener">Systems &amp; IT consulting ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshops">
+      <div class="container">
+        <div class="section-label">02 / Group Workshops &amp; Clinics</div>
+        <h2>Current Workshop Tracks</h2>
+        <p class="section-intro">
+          Sessions are planned as small cohorts, in person in Salinas or Monterey, or live online,
+          so every participant can get direct answers about their own setup. Join the waitlist for
+          a track; pricing is announced with first dates.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div>
+              <div class="card-num">TRACK 01</div>
+              <h3>Digital Security &amp; Backup Basics</h3>
+              <div class="meta">90 Mins · Pricing announced with first dates</div>
+              <p>
+                Protect your accounts, client files, and devices from everyday scams and hardware failure
+                using simple, repeatable habits.
+              </p>
+              <ul>
+                <li>Password managers &amp; two-factor authentication</li>
+                <li>Spotting phishing and invoice fraud</li>
+                <li>Automated 3-2-1 local and cloud backups</li>
+              </ul>
+            </div>
+            <a href="#request" class="btn btn-secondary" data-topic="Track 01: Digital Security &amp; Backup Basics">Join waitlist for this track ↓</a>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="card-num">TRACK 02</div>
+              <h3>Attention, AI and Your Own Voice</h3>
+              <div class="meta">45–60 Mins · Pricing announced with first dates</div>
+              <p>
+                Built from Raymond’s Toastmasters talks. Take back focus from notifications and feeds,
+                use AI as a tool without losing your own voice, and set practical boundaries.
+              </p>
+              <ul>
+                <li>Taking back focus from notifications and feeds</li>
+                <li>Using AI as a tool without losing your own voice</li>
+                <li>Practical boundaries: what never to paste into AI</li>
+                <li>Clear prompts for everyday drafting and research</li>
+              </ul>
+            </div>
+            <a href="#request" class="btn btn-secondary" data-topic="Track 02: Attention, AI and Your Own Voice">Join waitlist for this track ↓</a>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="card-num">TRACK 03</div>
+              <h3>Taming Your Digital Workspace</h3>
+              <div class="meta">60 Mins · Pricing announced with first dates</div>
+              <p>
+                Organize cluttered files, browser tabs, calendars, and multi-monitor setups so you
+                spend less time searching and more time working.
+              </p>
+              <ul>
+                <li>Clean folder structures &amp; fast file retrieval</li>
+                <li>Multi-display ergonomics &amp; window flow</li>
+                <li>Cross-device syncing without subscription bloat</li>
+              </ul>
+            </div>
+            <a href="#request" class="btn btn-secondary" data-topic="Track 03: Taming Your Digital Workspace">Join waitlist for this track ↓</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="format">
+      <div class="container">
+        <div class="section-label">03 / Format &amp; Approach</div>
+        <h2>Built for Real People, Not IT Departments.</h2>
+        <p class="section-intro">
+          Led by Raymond Marr—bringing over four decades of hands-on computing experience,
+          enterprise IT support at Alaska seafood plants (Unisea), and structured public speaking
+          training to every session.
+        </p>
+
+        <div class="two-col">
+          <div class="info-box">
+            <h3>Waitlist first, then dates</h3>
+            <p>
+              Session dates are set around a full-time study schedule. When a date is ready,
+              waitlist members hear first. Groups stay small and interactive. Pricing is announced
+              with first dates, and no payment is collected until a session date is confirmed.
+            </p>
+          </div>
+          <div class="info-box" id="systems-consulting">
+            <h3>Need 1-on-1 or on-site systems help?</h3>
+            <p>
+              If you need dedicated workstation setup, network troubleshooting, or private team
+              consulting, visit
+              <a href="https://ronanmiles.tech" target="_blank" rel="noopener">ronanmiles.tech ↗</a>
+              for direct consulting packages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="request">
+      <div class="container">
+        <div class="section-label">04 / Contact</div>
+        <h2>Join a Waitlist or Ask a Question</h2>
+        <p class="section-intro">
+          Select a topic below to open a pre-filled email draft in your mail app. Nothing is sent
+          until you press Send. Pricing is announced with first dates, and no payment is collected
+          until a session date is confirmed.
+        </p>
+
+        <div class="form-wrap">
+          <form id="enquiry-form" action="mailto:ronanmiles.tech@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="topicSelect">Workshop or guidance interest</label>
+              <select id="topicSelect" name="topic" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Get Help: one-on-one question">Get Help: one-on-one question</option>
+                <option value="Track 01: Digital Security &amp; Backup Basics">Track 01: Digital Security &amp; Backup Basics</option>
+                <option value="Track 02: Attention, AI and Your Own Voice">Track 02: Attention, AI and Your Own Voice</option>
+                <option value="Track 03: Taming Your Digital Workspace">Track 03: Taming Your Digital Workspace</option>
+                <option value="Private Team Workshop Inquiry">Private team or organization workshop</option>
+                <option value="Custom Topic Request">Custom topic request</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formatSelect">Preferred format</label>
+              <select id="formatSelect" name="format" required>
+                <option value="Live online">Live online</option>
+                <option value="In-Person (Salinas / Monterey Area)">In-person (Salinas / Monterey area)</option>
+                <option value="Either Format Works">Either format works</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notesInput">Questions, preferred days, or what you need help with</label>
+              <textarea id="notesInput" name="notes" rows="4" placeholder="Share preferred days, how many people would attend, or the question you want to ask. Do not include passwords or sensitive details."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Open email draft</button>
+            <p class="privacy-note">
+              Direct contact:
+              <a href="mailto:ronanmiles.tech@gmail.com?subject=Enquiry%20from%20Ronan%20Miles%20Help">ronanmiles.tech@gmail.com</a>.
+              Nothing is stored on a server; your mail app opens a draft for you to review and send.
+              Please do not include passwords or other sensitive details.
+            </p>
+            <noscript>
+              <p class="privacy-note">JavaScript is off. Submitting this form still opens a message to ronanmiles.tech@gmail.com in your mail app. Nothing is sent until you press Send there.</p>
+            </noscript>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Ronan Miles Help · Salinas &amp; Monterey, CA</div>
+      <div class="footer-links">
+        <a href="https://ronanmiles.tech" target="_blank" rel="noopener">ronanmiles.tech ↗</a>
+        <a href="https://raymondmarr.com" target="_blank" rel="noopener">raymondmarr.com ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var CONTACT_EMAIL = "ronanmiles.tech@gmail.com";
+
+      function encodeMailValue(value) {
+        return encodeURIComponent(
+          String(value)
+            .replace(/\r\n/g, "\n")
+            .replace(/\r/g, "\n")
+            .replace(/\n/g, "\r\n")
+        );
+      }
+
+      function mailSubject(topic) {
+        if (topic.indexOf("Get Help") === 0) {
+          return "Get Help enquiry: " + topic;
+        }
+        return "Workshop Inquiry: " + topic;
+      }
+
+      function mailBody(topic, format, notes) {
+        return [
+          "Hello Ronan Miles Help,",
+          "",
+          "I am writing about the following:",
+          "- Topic: " + topic,
+          "- Preferred Format: " + format,
+          "",
+          "Notes / Preferred Days:",
+          notes || "(No additional notes provided)",
+          "",
+          "Sent from ronanmiles.help"
+        ].join("\n");
+      }
+
+      function buildMailto(topic, format, notes) {
+        return (
+          "mailto:" +
+          CONTACT_EMAIL +
+          "?subject=" +
+          encodeMailValue(mailSubject(topic)) +
+          "&body=" +
+          encodeMailValue(mailBody(topic, format, notes))
+        );
+      }
+
+      window.__ronanMilesHelpBuildMailto = buildMailto;
+
+      var topicSelect = document.getElementById("topicSelect");
+      var links = document.querySelectorAll("[data-topic]");
+      for (var i = 0; i < links.length; i += 1) {
+        links[i].addEventListener("click", function () {
+          if (topicSelect) {
+            topicSelect.value = this.getAttribute("data-topic");
+          }
+        });
+      }
+
+      var form = document.getElementById("enquiry-form");
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (typeof form.reportValidity === "function" && !form.reportValidity()) {
+            return;
+          }
+          var topic = document.getElementById("topicSelect").value;
+          var format = document.getElementById("formatSelect").value;
+          var notes = document.getElementById("notesInput").value.trim();
+          if (!topic) {
+            return;
+          }
+          window.location.href = buildMailto(topic, format, notes);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
